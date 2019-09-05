@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Leathers",
+        "sp": 4
+    },
+    {
+        "name": "Kevlar",
+        "sp": 7
+    },
+    {
+        "name": "Bodyweight Suit",
+        "sp": 11
+    },
+    {
+        "name": "Light Armorjack",
+        "sp": 11
+    },
+    {
+        "name": "Heavy Armorjack",
+        "sp": 15
+    },
+    {
+        "name": "None",
+        "sp": 0
+    }
+]

@@ -1,0 +1,120 @@
+export default {
+    Rockerboy: [
+        {
+            int: 5,
+            ref: 8,
+            dex: 5,
+            tech: 4,
+            cool: 9,
+            will: 8,
+            luck: 6,
+            move: 6,
+            body: 10,
+            emp: 6
+        },
+        {
+            int: 5,
+            ref: 10,
+            dex: 6,
+            tech: 3,
+            cool: 9,
+            will: 10,
+            luck: 6,
+            move: 6,
+            body: 10,
+            emp: 4
+        },
+        {
+            int: 6,
+            ref: 10,
+            dex: 5,
+            tech: 3,
+            cool: 9,
+            will: 10,
+            luck: 7,
+            move: 5,
+            body: 8,
+            emp: 5
+        },
+        {
+            int: 6,
+            ref: 9,
+            dex: 5,
+            tech: 6,
+            cool: 9,
+            will: 9,
+            luck: 5,
+            move: 6,
+            body: 8,
+            emp: 4
+        },
+        {
+            int: 5,
+            ref: 10,
+            dex: 6,
+            tech: 3,
+            cool: 10,
+            will: 10,
+            luck: 6,
+            move: 6,
+            body: 8,
+            emp: 4
+        },
+        {
+            int: 6,
+            ref: 10,
+            dex: 7,
+            tech: 4,
+            cool: 8,
+            will: 10,
+            luck: 5,
+            move: 7,
+            body: 9,
+            emp: 5
+        }
+    ],
+    Solo: [],
+    Netrunner: [],
+    Tech: [],
+    Media: [],
+    Lawman: [],
+    Exec: [],
+    Fixer: [],
+    Nomad: [],
+    "Street Scum": [{
+        int: 3,
+        ref: 4,
+        dex: 7,
+        tech: 3,
+        cool: 2,
+        will: 4,
+        luck: 0,
+        move: 4,
+        body: 4,
+        emp: 2
+    },],
+    Booster: [{
+        int: 4,
+        ref: 6,
+        dex: 8,
+        tech: 3,
+        cool: 4,
+        will: 4,
+        luck: 0,
+        move: 4,
+        body: 6,
+        emp: 3
+    },],
+    "Private Security": [{
+        int: 5,
+        ref: 6,
+        dex: 8,
+        tech: 3,
+        cool: 5,
+        will: 4,
+        luck: 0,
+        move: 4,
+        body: 5,
+        emp: 3
+    },]
+};
