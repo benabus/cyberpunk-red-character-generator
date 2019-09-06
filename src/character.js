@@ -33,6 +33,7 @@ const Character = function() {
 
     let role = ROLES[random(ROLES.length)];
     let stats = {};
+    console.debug(Database.role_stats[role]);
     if (role == "None" || Database.role_stats[role].length == 0) {
         stats = {
             int: random(10, 1),
