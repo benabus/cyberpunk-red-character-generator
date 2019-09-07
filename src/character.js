@@ -25,7 +25,13 @@ function getRandom(database) {
     } catch (e) {
         console.error(e);
     }
+    // console.debug(item);
     return item;
+}
+
+function checkForDuplicates(set)
+{
+    
 }
 
 const Character = function() {
@@ -33,7 +39,7 @@ const Character = function() {
 
     let role = ROLES[random(ROLES.length)];
     let stats = {};
-    console.debug(Database.role_stats[role]);
+    // console.debug(Database.role_stats[role]);
     if (role == "None" || Database.role_stats[role].length == 0) {
         stats = {
             int: random(10, 1),
@@ -52,36 +58,74 @@ const Character = function() {
     {
         let role_stats = Database.role_stats[role];
         let roll = random(role_stats.length-1);
-        console.debug(roll);
+        // console.debug(roll);
         stats = role_stats[roll];
     }
+
+
+    let weapon_count = random(3);
+    let skill_count = random(12);
 
     let starting_hits = Math.ceil(stats.body * 5);
     let seriously_wounded = Math.ceil(stats.body * 2.5);
     let death_save = stats.body;
 
-    let skills = [];
+    let skills_set = new Set();
+    let skill_names = Object.keys(Database.skills);
+    if(role == "Netrunner")
+    {
+        skills_set.add("Interface");
+    }
+    while(skills_set.size < skill_count)
+    {
+        let skill_name = skill_names[random(skill_names.length - 1)];
+        if(skill_name == "Interface")
+        {
+            continue;
+        }
+        skills_set.add(skill_name);
+    }
+    let skills = [...skills_set].map((skill_name)=>{ 
+        let skill = Database.skills[skill_name]; 
+        skill.modifier = random(10, 1);
+        return skill;
+    });
+    skills = skills.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); ;
+
     let armor = {
         head: getRandom("armor"),
         body: getRandom("armor")
     };
 
     let weapons = [];
-    for (let i = 0; i < random(3); i++) {
+    for (let i = 0; i < weapon_count; i++) {
         weapons.push(getRandom("weapons"));
     }
 
     let cyberware = [];
     let gear = [];
+
+    let number_of_friends = random(10, 1) - 7;
+    let number_of_enemies = random(10, 1) - 5;
+
     let lifepath = {
-        background: "",
-        motivation: "",
-        goals: "",
-        friends: "",
-        enemies: "",
-        romance: "",
-        personality: ""
+        background: getRandom("background"),
+        motivation: getRandom("motivation"),
+        goals: getRandom("goals"),
+        friends: [],
+        enemies: [],
+        romance: getRandom("romance"),
+        personality: getRandom("personality")
     };
+
+    for(let i = 0; i < number_of_friends; i++)
+    {
+        lifepath.friends.push(getRandom("friends"));
+    }
+    for(let i = 0; i < number_of_enemies; i++)
+    {
+        lifepath.enemies.push(getRandom("enemies"));
+    }
 
     return_obj = {
         role,

@@ -11,6 +11,7 @@ import romance from "./romance";
 import skills from "./skills";
 import weapons from "./weapons";
 import role_stats from "./role_stats";
+import role_skills from "./role_skills";
 
 export default {
     armor,
@@ -25,5 +26,6 @@ export default {
     romance,
     skills,
     weapons,
-    role_stats
+    role_stats,
+    role_skills
 };

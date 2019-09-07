@@ -1,30 +1,206 @@
 <template>
     <div class="home">
-        <button @click="generateCharacter">Regen</button>
-        <br />
-        Stats:
-        <pre>{{character}}</pre>
+        <div class="container p-3">
+            <button class="btn btn-primary" @click="generateCharacter">Regen</button>
+        </div>
+
+        <div v-if="character"
+             class="container-fluid">
+
+            <div class="card mb-3 p-3">
+                <div class="row">
+                    <h2 class="col">Role: {{character && character.role}}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-xl-6">
+                        <table class="table table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th v-for="stat in Object.keys(stats)"
+                                        :key="`head_${stat}`">
+                                        {{stat.toUpperCase()}}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td v-for="(stat, type) in stats"
+                                        :key="type">
+                                        {{stat}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-4 col-xl-2 text-center">
+                        Starting Hit Points
+                        <br />
+                        <b v-text="character.starting_hits"></b>
+                    </div>
+                    <div class="col-4 col-xl-2 text-center">
+                        Seriously Wounded
+                        <br />
+                        <b v-text="character.seriously_wounded"></b>
+                    </div>
+                    <div class="col-4 col-xl-2 text-center">
+                        Death Save
+                        <br />
+                        <b v-text="character.death_save"></b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-7 mb-3">
+                    <div class="card p-3 mb-3">
+                        <h3>Skills</h3>
+                        <div class="row">
+                            <div class="col-4 pb-3 d-flex"
+                                 v-for="(skill, index) in character.skills"
+                                 :key="`skill_${index}`">
+                                <div class="text-center card flex-fill p-2">
+                                    <div><strong v-text="skill.name"></strong></div>
+                                    <div>{{skill.stat}} + {{skill.modifier}} (<b>{{stats[skill.stat.toLowerCase()] + skill.modifier}}</b>)</div>
+                                    <div><small>{{skill.description}}</small></div>
+                                </div>
+                            </div>
+                            <div class="col" v-if="character.skills.length == 0">
+                                No Skills :(
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-3">
+                        <h3>Life Path</h3>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Background</th>
+                                    <td v-text="character.lifepath.background"></td>
+                                </tr>
+                                <tr>
+                                    <th>Motivation</th>
+                                    <td v-text="character.lifepath.motivation"></td>
+                                </tr>
+                                <tr>
+                                    <th>Goals</th>
+                                    <td v-text="character.lifepath.goals"></td>
+                                </tr>
+                                <tr>
+                                    <th>Friends</th>
+                                    <td>
+                                        <ol class="m-0 pl-3"
+                                            v-if="character.lifepath.friends.length > 0">
+                                            <li v-for="friend in character.lifepath.friends"
+                                                :key='friend'
+                                                v-text="friend"></li>
+                                        </ol>
+                                        <span v-else>None</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Enemies</th>
+                                    <td>
+
+                                        <ol class="m-0 pl-3"
+                                            v-if="character.lifepath.enemies.length > 0">
+                                            <li v-for="enemy in character.lifepath.enemies"
+                                                :key='enemy'
+                                                v-text="enemy"></li>
+                                        </ol>
+                                        <span v-else>None</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Romance</th>
+                                    <td v-text="character.lifepath.romance"></td>
+                                </tr>
+                                <tr>
+                                    <th>Personality</th>
+                                    <td v-text="character.lifepath.personality"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5 mb-3">
+                    <div class="card p-3 mb-3">
+                        <h3>Armor</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Type</th>
+                                    <th>SP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Head</th>
+                                    <td v-text="character.armor.head.name"></td>
+                                    <td v-text="character.armor.head.sp"></td>
+                                </tr>
+                                <tr>
+                                    <th>Body</th>
+                                    <td v-text="character.armor.body.name"></td>
+                                    <td v-text="character.armor.body.sp"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card p-3">
+                        <h3>Weapons</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Damage</th>
+                                    <th>Special</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(weapon, index) in character.weapons"
+                                    :key="`weapon_${index}`">
+                                    <td v-text="weapon.name"></td>
+                                    <td v-text="weapon.damage"></td>
+                                    <td v-text="weapon.special || '-'"></td>
+                                </tr>
+                                <tr v-if="character.weapons.length == 0">
+                                    <td colspan="3">No Weapons.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-import Character from '@/character.js';
+import Character from "@/character.js";
 
 export default {
     name: "home",
-    data: function(){
+    data: function() {
         return {
             character: undefined
         };
     },
+    computed: {
+        stats: function() {
+            return (this.character && this.character.stats) || {};
+        }
+    },
     methods: {
-        generateCharacter: function(){
+        generateCharacter: function() {
             this.$set(this, "character", new Character());
         }
     },
-    mounted: function(){
+    mounted: function() {
         this.generateCharacter();
         // setInterval( ()=>{
         // this.generateCharacter();
