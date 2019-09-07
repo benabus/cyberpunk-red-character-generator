@@ -1,1 +1,29 @@
-{}
+{
+    "Cyberarm": {
+        "description": "A Cyberweapon concealed in a cyberarm."
+    },
+    "Cyberleg (Paired Jump Boosters)": {
+        "description": "You can leap 6 m/yds straight up or make a running jump of up to 8 m/yds."
+    },
+    "Cyberaudio  (Amped Hearing)": {
+        "description": "Adds +1 to any sound–related Task Check."
+    },
+    "Cyberaudio  (Radio Link)": {
+        "description": "Micro radio implant gives you the ability to talk to any receiver on the same band frequency for up to 1 mile/1.6km."
+    },
+    "Cyberoptic  (Camera)": {
+        "description": "Images can be recorded on the built–in chip and downloaded to a recorder or Agent."
+    },
+    "Cyberoptic  (Low Light)": {
+        "description": "You can see clearly in dim light (faint moonlight, distant street lamps)."
+    },
+    "Cyberoptic  (Targeting)": {
+        "description": "A built–in targeting sight allows you to add +1 to Marksmanship."
+    },
+    "Interface Plugs": {
+        "description": "Sockets that allow user to interface with machines and cybertech."
+    },
+    "Reflex Boost (Speedware)": {
+        "description": "You are boosted for five full Turns (+3 to Initiative Checks) before the boost cuts out. You must then wait 2 Turns before reboosting."
+    }
+}

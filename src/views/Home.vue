@@ -1,7 +1,8 @@
 <template>
     <div class="home">
         <div class="container p-3">
-            <button class="btn btn-primary" @click="generateCharacter">Regen</button>
+            <button class="btn btn-primary"
+                    @click="generateCharacter">Regen</button>
         </div>
 
         <div v-if="character"
@@ -9,10 +10,14 @@
 
             <div class="card mb-3 p-3">
                 <div class="row">
+                    <!-- <div class="col-2">
+                        <img class="img-fluid"
+                             :src="`https://thispersondoesnotexist.com/image?${Object.values(character.stats).join('-')}`" />
+                    </div> -->
                     <h2 class="col">Role: {{character && character.role}}</h2>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-xl-6">
+                    <div class="col-12 col-xl-8">
                         <table class="table table-responsive-md">
                             <thead>
                                 <tr>
@@ -65,7 +70,8 @@
                                     <div><small>{{skill.description}}</small></div>
                                 </div>
                             </div>
-                            <div class="col" v-if="character.skills.length == 0">
+                            <div class="col"
+                                 v-if="character.skills.length == 0">
                                 No Skills :(
                             </div>
                         </div>
@@ -92,8 +98,8 @@
                                     <td>
                                         <ol class="m-0 pl-3"
                                             v-if="character.lifepath.friends.length > 0">
-                                            <li v-for="friend in character.lifepath.friends"
-                                                :key='friend'
+                                            <li v-for="(friend, index) in character.lifepath.friends"
+                                                :key='`friend_${index}`'
                                                 v-text="friend"></li>
                                         </ol>
                                         <span v-else>None</span>
@@ -105,8 +111,8 @@
 
                                         <ol class="m-0 pl-3"
                                             v-if="character.lifepath.enemies.length > 0">
-                                            <li v-for="enemy in character.lifepath.enemies"
-                                                :key='enemy'
+                                            <li v-for="(enemy, index) in character.lifepath.enemies"
+                                                :key='`enemy_${index}`'
                                                 v-text="enemy"></li>
                                         </ol>
                                         <span v-else>None</span>
@@ -151,7 +157,7 @@
                         </table>
                     </div>
 
-                    <div class="card p-3">
+                    <div class="card p-3 mb-3">
                         <h3>Weapons</h3>
                         <table class="table">
                             <thead>
@@ -170,6 +176,51 @@
                                 </tr>
                                 <tr v-if="character.weapons.length == 0">
                                     <td colspan="3">No Weapons.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="card p-3">
+                        <h3>Cyberware</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(cyberware, index) in character.cyberware"
+                                    :key="`cyberware_${index}`">
+                                    <td v-text="cyberware.name"></td>
+                                    <td v-text="cyberware.description"></td>
+                                </tr>
+                                <tr v-if="character.cyberware.length == 0">
+                                    <td colspan="2">No Cyberware.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card p-3 mt-3">
+                        <h3>Gear</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, index) in character.gear"
+                                    :key="`cyberware_${index}`">
+                                    <td v-text="item.name"></td>
+                                    <td v-text="item.description"></td>
+                                </tr>
+                                <tr v-if="character.gear.length == 0">
+                                    <td colspan="2">No Gear.</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -65,6 +65,8 @@ const Character = function() {
 
     let weapon_count = random(3);
     let skill_count = random(12);
+    let cyberware_count = random(3);
+    console.debug(role, cyberware_count);
 
     let starting_hits = Math.ceil(stats.body * 5);
     let seriously_wounded = Math.ceil(stats.body * 2.5);
@@ -90,19 +92,57 @@ const Character = function() {
         skill.modifier = random(10, 1);
         return skill;
     });
-    skills = skills.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); ;
+    skills = skills.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); 
+
+
+    let cyberware_set = new Set();
+    let cyberware_names = Object.keys(Database.cyberware);
+    if(role == "Netrunner")
+    {
+        cyberware_set.add("Interface Plugs");
+    }
+    if(role == "Solo")
+    {
+        cyberware_count += 1;
+    }
+    while(cyberware_set.size < cyberware_count)
+    {
+        let cyberware_name = cyberware_names[random(cyberware_names.length - 1)];
+        if(cyberware_name == "Interface Plugs")
+        {
+            continue;
+        }
+        cyberware_set.add(cyberware_name);
+    }
+
 
     let armor = {
         head: getRandom("armor"),
         body: getRandom("armor")
     };
 
+    // let weapons_set = new Set();
     let weapons = [];
     for (let i = 0; i < weapon_count; i++) {
         weapons.push(getRandom("weapons"));
+
+        if(weapons[i].cyber)
+        {
+            cyberware_set.add("Cyberarm");
+        }
+        
+        // weapons_set.add(weapons[i].name);
     }
 
-    let cyberware = [];
+
+    let cyberware = [...cyberware_set].map((cyberware_name)=>{ 
+        let cyberware = Database.cyberware[cyberware_name]; 
+        cyberware.name = cyberware_name;
+        return cyberware;
+    });
+    cyberware = cyberware.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); 
+
+
     let gear = [];
 
     let number_of_friends = random(10, 1) - 7;
