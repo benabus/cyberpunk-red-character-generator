@@ -20,7 +20,11 @@
         "sp": 15
     },
     {
-        "name": "None",
+        "name": "MetalGear",
+        "sp": 25
+    },
+    {
+        "name": "Cloth",
         "sp": 0
     }
 ]

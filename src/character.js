@@ -34,10 +34,10 @@ function checkForDuplicates(set)
     
 }
 
-const Character = function() {
+const Character = function(settings) {
     let return_obj = {};
-
-    let role = ROLES[random(ROLES.length)];
+    settings = settings || {};
+    let role = settings.role || getRandom("roles");
     let stats = {};
     // console.debug(Database.role_stats[role]);
     if (role == "None" || Database.role_stats[role].length == 0) {
@@ -71,6 +71,7 @@ const Character = function() {
     let starting_hits = Math.ceil(stats.body * 5);
     let seriously_wounded = Math.ceil(stats.body * 2.5);
     let death_save = stats.body;
+    let reputation = random(10, 1);
 
     let skills_set = new Set();
     let skill_names = Object.keys(Database.skills);
@@ -178,7 +179,8 @@ const Character = function() {
         weapons,
         cyberware,
         gear,
-        lifepath
+        lifepath,
+        reputation
     };
 
     return return_obj;
@@ -186,18 +188,3 @@ const Character = function() {
 
 export default Character;
 
-const ROLES = [
-    "None",
-    "Rockerboy",
-    "Solo",
-    "Netrunner",
-    "Tech",
-    "Media",
-    "Lawman",
-    "Exec",
-    "Fixer",
-    "Nomad",
-    "Street Scum",
-    "Booster",
-    "Private Security"
-];

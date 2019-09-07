@@ -1,27 +1,42 @@
 <template>
     <div class="home">
         <div class="container p-3">
-            <button class="btn btn-primary"
-                    @click="generateCharacter">Regen</button>
+
         </div>
 
         <div v-if="character"
              class="container-fluid">
 
             <div class="card mb-3 p-3">
-                <div class="row">
+                <div class="d-flex justify-content-between align-items-center">
                     <!-- <div class="col-2">
                         <img class="img-fluid"
                              :src="`https://thispersondoesnotexist.com/image?${Object.values(character.stats).join('-')}`" />
                     </div> -->
-                    <h2 class="col">Role: {{character && character.role}}</h2>
+                    <h2 class=""><span>{{character && character.role}}</span></h2>
+
+                    <div class=" d-flex pb-3 flex-wrap">
+                        <button class="btn btn-outline-primary"
+                                @click="chosen_role = character.role; set_role = !set_role;">Set Role</button>
+                        <div class="mx-3">
+                            <select v-if="set_role"
+                                    class="form-control"
+                                    v-model="chosen_role">
+                                <option v-for="role in role_options"
+                                        :key='`role_option_${role}`'>{{role}}</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary"
+                                @click="generateCharacter">Regen</button>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-xl-8">
+                    <div class="col-12">
                         <table class="table table-responsive-md">
                             <thead>
                                 <tr>
-                                    <th v-for="stat in Object.keys(stats)"
+                                    <th class="text-center"
+                                        v-for="stat in Object.keys(stats)"
                                         :key="`head_${stat}`">
                                         {{stat.toUpperCase()}}
                                     </th>
@@ -29,7 +44,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td v-for="(stat, type) in stats"
+                                    <td class="text-center"
+                                        v-for="(stat, type) in stats"
                                         :key="type">
                                         {{stat}}
                                     </td>
@@ -38,20 +54,26 @@
                         </table>
                     </div>
 
-                    <div class="col-4 col-xl-2 text-center">
-                        Starting Hit Points
-                        <br />
-                        <b v-text="character.starting_hits"></b>
+                    <div class="col-4 text-center">
+                        <div class="card p-3">
+                            Starting Hit Points
+                            <br />
+                            <b v-text="character.starting_hits"></b>
+                        </div>
                     </div>
-                    <div class="col-4 col-xl-2 text-center">
-                        Seriously Wounded
-                        <br />
-                        <b v-text="character.seriously_wounded"></b>
+                    <div class="col-4 text-center">
+                        <div class="card p-3">
+                            Seriously Wounded
+                            <br />
+                            <b v-text="character.seriously_wounded"></b>
+                        </div>
                     </div>
-                    <div class="col-4 col-xl-2 text-center">
-                        Death Save
-                        <br />
-                        <b v-text="character.death_save"></b>
+                    <div class="col-4 text-center">
+                        <div class="card p-3">
+                            Death Save
+                            <br />
+                            <b v-text="character.death_save"></b>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,7 +81,12 @@
             <div class="row">
                 <div class="col-12 col-md-7 mb-3">
                     <div class="card p-3 mb-3">
-                        <h3>Skills</h3>
+                        <div class="d-flex justify-content-between">
+                            <h3>Skills</h3>
+                            <div>
+                                Reputation: <b>{{character.reputation}}</b>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-4 pb-3 d-flex"
                                  v-for="(skill, index) in character.skills"
@@ -181,7 +208,6 @@
                         </table>
                     </div>
 
-
                     <div class="card p-3">
                         <h3>Cyberware</h3>
                         <table class="table">
@@ -233,22 +259,32 @@
 
 <script>
 import Character from "@/character.js";
+import Database from "@/database";
 
 export default {
     name: "home",
     data: function() {
         return {
-            character: undefined
+            character: undefined,
+            set_role: false,
+            chosen_role: ""
         };
     },
     computed: {
         stats: function() {
             return (this.character && this.character.stats) || {};
+        },
+        role_options: function() {
+            return Database.roles;
         }
     },
     methods: {
         generateCharacter: function() {
-            this.$set(this, "character", new Character());
+            let char_options = {};
+            if (this.set_role) {
+                char_options.role = this.chosen_role;
+            }
+            this.$set(this, "character", new Character(char_options));
         }
     },
     mounted: function() {

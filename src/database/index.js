@@ -12,6 +12,7 @@ import skills from "./skills";
 import weapons from "./weapons";
 import role_stats from "./role_stats";
 import role_skills from "./role_skills";
+import roles from "./roles";
 
 export default {
     armor,
@@ -27,5 +28,6 @@ export default {
     skills,
     weapons,
     role_stats,
-    role_skills
+    role_skills,
+    roles
 };
