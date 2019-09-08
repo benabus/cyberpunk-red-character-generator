@@ -9,7 +9,7 @@
         </div>
         <router-view />
 
-        <footer class="footer container py-3 d-flex ">
+        <footer class="footer container py-3 d-flex justify-content-between ">
             <div>
                 Content &copy; R. Talsorian Games, Inc.
                 <br />

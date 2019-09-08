@@ -1,5 +1,5 @@
 export default {
-    Cyberarm: { special: "Melee", damage: "1d6", cyber: true },
+    "Cyberarm": { special: "Melee", damage: "1d6", cyber: true },
     Kinfe: { special: "Melee", damage: "1d6" },
     "Big Knucks": { special: "Melee", damage: "1d6", cyber: true},
     "Medium Pistol": { damage: "2d6" },

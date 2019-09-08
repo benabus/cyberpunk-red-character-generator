@@ -29,9 +29,16 @@ function getRandom(database) {
     return item;
 }
 
-function checkForDuplicates(set)
+function setHas(set, name)
 {
-    
+    for(let item in set)
+    {
+        if(item.name == name)
+        {
+            return true;
+        }
+    }
+    return false
 }
 
 const Character = function(settings) {
@@ -66,7 +73,7 @@ const Character = function(settings) {
     let weapon_count = random(3);
     let skill_count = random(12);
     let cyberware_count = random(3);
-    console.debug(role, cyberware_count);
+    // console.debug(role, cyberware_count);
 
     let starting_hits = Math.ceil(stats.body * 5);
     let seriously_wounded = Math.ceil(stats.body * 2.5);
@@ -135,13 +142,27 @@ const Character = function(settings) {
         // weapons_set.add(weapons[i].name);
     }
 
+    if(cyberware_set.has("Cyberarm"))
+    {
+        if(! setHas(weapons, "Cyberarm"))
+        {
+            let ca = Database.weapons["Cyberarm"];
+            ca.name = "Cyberarm";
+            weapons.push(ca);
+        }
+    }
+
+    
 
     let cyberware = [...cyberware_set].map((cyberware_name)=>{ 
         let cyberware = Database.cyberware[cyberware_name]; 
         cyberware.name = cyberware_name;
         return cyberware;
     });
+
+
     cyberware = cyberware.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); 
+    weapons = weapons.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); 
 
 
     let gear = [];
@@ -183,6 +204,7 @@ const Character = function(settings) {
         reputation
     };
 
+    console.debug(return_obj);
     return return_obj;
 };
 
