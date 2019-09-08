@@ -1,9 +1,5 @@
 <template>
     <div class="home">
-        <div class="container p-3">
-
-        </div>
-
         <div v-if="character"
              class="container-fluid">
 
