@@ -14,5 +14,11 @@ export default new Router({
             component: () =>
                 import(/* webpackChunkName: "home" */ "./views/Home.vue")
         },
+        {
+            path: "/:base64",
+            name: "home-base64",
+            component: () =>
+                import(/* webpackChunkName: "home" */ "./views/Home.vue")
+        },
     ]
 });

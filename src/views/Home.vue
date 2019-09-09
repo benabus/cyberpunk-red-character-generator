@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <table class="table table-responsive-md">
+                        <table class="table table-responsive-sm">
                             <thead>
                                 <tr>
                                     <th class="text-center"
@@ -280,11 +280,19 @@ export default {
             if (this.set_role) {
                 char_options.role = this.chosen_role;
             }
-            this.$set(this, "character", new Character(char_options));
+            let char = new Character(char_options);
+            this.$set(this, "character", char);
+            this.$router.push("/" + this.character.encode64());
         }
     },
     mounted: function() {
-        this.generateCharacter();
+        let base64 = this.$route.params.base64;
+        // console.debug(base64);
+        if (base64) {
+            this.$set(this, "character", new Character(base64));
+        } else {
+            this.generateCharacter();
+        }
         // setInterval( ()=>{
         // this.generateCharacter();
         // }, 2000);
