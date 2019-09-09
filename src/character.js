@@ -1,5 +1,6 @@
 import Database from "@/database";
 import CryptoJS from "crypto-js";
+import RandomName from "node-random-name";
 // console.debug(Database);
 
 function random(max, min) {
@@ -46,6 +47,9 @@ function Character(settings) {
     } else {
         settings = settings || {};
         let role = settings.role || getRandom("roles");
+
+        let name = RandomName();
+
         let stats = {};
         // console.debug(Database.role_stats[role]);
         if (role == "None" || Database.role_stats[role].length == 0) {
@@ -177,6 +181,7 @@ function Character(settings) {
         }
 
         return_obj = {
+            name,
             role,
             stats,
             starting_hits,

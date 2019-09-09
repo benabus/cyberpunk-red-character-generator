@@ -26,6 +26,9 @@
                                 @click="generateCharacter">Regen</button>
                     </div>
                 </div>
+                <div>
+                    Name: {{character.name}}
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <table class="table table-responsive-sm">
