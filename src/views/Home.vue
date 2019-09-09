@@ -289,7 +289,8 @@ export default {
         }
     },
     mounted: function() {
-        let base64 = this.$route.params.base64;
+        let base64 = false;
+        // let base64 = this.$route.params.base64;
         // console.debug(base64);
         if (base64) {
             this.$set(this, "character", new Character(base64));

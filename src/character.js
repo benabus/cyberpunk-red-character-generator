@@ -75,6 +75,7 @@ function Character(settings) {
         let weapon_count = random(3);
         let skill_count = random(12);
         let cyberware_count = random(3);
+        let gear_count = random(4,1);
         // console.debug(role, cyberware_count);
 
         let starting_hits = Math.ceil(stats.body * 5);
@@ -102,6 +103,28 @@ function Character(settings) {
         skills = skills.sort((a, b) =>
             a.name > b.name ? 1 : b.name > a.name ? -1 : 0
         );
+
+        // let gear_set = new Set();
+        // let gear_names = Object.keys(Database.gear);
+        // // if (role == "Netrunner") {
+        // //     gear_set.add("Interface");
+        // // }
+        // while (gear_set.size < gear_count) {
+        //     let gear_name = gear_names[random(gear_names.length - 1)];
+        //     // if (gear_name == "Interface") {
+        //     //     continue;
+        //     // }
+        //     gear_set.add(gear_name);
+        // }
+        // let gear = [...gear_set].map(gear_name => {
+        //     let item = Database.gear[gear_name];
+        //     // item.modifier = random(10, 1);
+        //     return item;
+        // });
+        // gear = gear.sort((a, b) =>
+        //     a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+        // );
+
 
         let cyberware_set = new Set();
         let cyberware_names = Object.keys(Database.cyberware);
@@ -158,7 +181,38 @@ function Character(settings) {
             a.name > b.name ? 1 : b.name > a.name ? -1 : 0
         );
 
-        let gear = [];
+
+        // let gear = [];
+        let gear_set = new Set();
+        gear_set.add("Agent");
+        if(role == "Netrunner")
+        {
+            gear_set.add("Cyberdeck & Cables");
+            gear_set.add("Programs");
+            gear_set.add("Black ICE");
+            // gear.push({...Database.gear["Cyberdeck & Cables"], name: "Cyberdeck & Cables"});
+            // gear.push({... Database.gear["Programs"], name: "Programs"});
+            // gear.push({... Database.gear["Black ICE"], name: "Black ICE"});
+        }
+        while(gear_set.size < gear_count)
+        {
+            let item = (getRandom("gear"));
+            if(item.role && item.role != role)
+            {
+                continue;
+            }
+            gear_set.add(item.name);
+        }
+        let gear = [...gear_set].map(gear_name => {
+            let gear = Database.gear[gear_name];
+            gear.name = gear_name;
+            return gear;
+        });
+        gear = gear.sort((a, b) =>
+            a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+        );
+
+
 
         let number_of_friends = random(10, 1) - 7;
         let number_of_enemies = random(10, 1) - 5;
@@ -196,7 +250,7 @@ function Character(settings) {
             reputation
         };
     }
-
+    console.debug(return_obj);
     for (let attr in return_obj) {
         this[attr] = return_obj[attr];
     }
