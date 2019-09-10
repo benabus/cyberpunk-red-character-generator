@@ -152,6 +152,22 @@
                                     <th>Personality</th>
                                     <td v-text="character.lifepath.personality"></td>
                                 </tr>
+                                <tr>
+                                    <th>Clothes</th>
+                                    <td v-text="character.appearance.clothes"></td>
+                                </tr>
+                                <tr>
+                                    <th>Hair</th>
+                                    <td v-text="character.appearance.hair"></td>
+                                </tr>
+                                <tr>
+                                    <th>Affectations</th>
+                                    <td v-text="character.appearance.affectations"></td>
+                                </tr>
+                                <tr>
+                                    <th>Origin and Lang</th>
+                                    <td v-text="character.appearance.origin"></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

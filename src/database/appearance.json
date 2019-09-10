@@ -1,0 +1,50 @@
+{
+    "Clothes": [
+        "Biker leathers",
+        "Blue jeans",
+        "Corporate Suits",
+        "Jumpsuits",
+        "Miniskirts",
+        "High Fashion",
+        "Cammos",
+        "Normal clothes",
+        "Nude",
+        "Bag Lady chic"
+    ],
+    "Hairstyle": [
+        "Mohawk",
+        "Long & Ratty",
+        "Short & Spiked",
+        "Wild & all over",
+        "Bald",
+        "Striped",
+        "Tinted",
+        "Neat, short",
+        "Short, curly",
+        "Long, straight"
+    ],
+    "Affectations": [
+        "Tatoos",
+        "Mirrorshades",
+        "Ritual Scars",
+        "Spiked gloves",
+        "Nose Rings",
+        "Earrings",
+        "Long fingernails",
+        "Spike heeled boots",
+        "Weird Contact Lenses",
+        "Fingerless gloves"
+    ],
+    "Origins": [
+        "Anglo-American (English)",
+        "African (Bantu, Fante, Kongo, Ashanti, Zulu, Swahili)",
+        "Japanese/Korean (Japanese or Korean)",
+        "Central European/Soviet (Bulgarian, Russian, Czech, Polish, Ukranian, Slovak)",
+        "Pacific Islander (Microneasian, Tagalog, Polynesian, Malayan, Sudanese, Indonesian, Hawaiian)",
+        "Chinese/Southeast Asian (Burmese, Cantonese, Mandarin, Thai, Tibetan, Vietnamese)",
+        "Black American (English, Blackfolk)",
+        "Hispanic American (Spanish, English)",
+        "Central /SouthAmerican (Spanish, Portuguese)",
+        "European (French, German, English, Spanish, Italian, Greek, Danish, Dutch, Norwegian, Swedish, Finnish)"
+    ]
+}

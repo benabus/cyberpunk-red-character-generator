@@ -9,10 +9,14 @@ function random(max, min) {
     return Math.floor(Math.random() * max + min);
 }
 
-function getRandom(database) {
+function getRandom(database, sub) {
     let item = undefined;
     try {
         let d = Database[database] || Database[database + "s"];
+        if(sub)
+        {
+            d = d[sub];
+        }
         if (d.length) {
             let index = random(d.length);
             item = d[index];
@@ -234,6 +238,13 @@ function Character(settings) {
             lifepath.enemies.push(getRandom("enemies"));
         }
 
+        let appearance = {
+            clothes: getRandom("appearance", "Clothes"),
+            hair: getRandom("appearance", "Hairstyle"),
+            affectations: getRandom("appearance", "Affectations"),
+            origin: getRandom("appearance", "Origins")
+        };
+
         return_obj = {
             name,
             role,
@@ -247,7 +258,8 @@ function Character(settings) {
             cyberware,
             gear,
             lifepath,
-            reputation
+            reputation,
+            appearance
         };
     }
     console.debug(return_obj);

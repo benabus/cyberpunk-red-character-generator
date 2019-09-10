@@ -14,6 +14,7 @@ import role_stats from "./role_stats";
 import role_skills from "./role_skills";
 import roles from "./roles";
 import gear from "./gear";
+import appearance from "./appearance";
 
 export default {
     armor,
@@ -31,5 +32,6 @@ export default {
     role_stats,
     role_skills,
     roles,
-    gear
+    gear,
+    appearance
 };
