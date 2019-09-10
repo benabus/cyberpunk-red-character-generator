@@ -79,7 +79,7 @@ function Character(settings) {
         let weapon_count = random(3);
         let skill_count = random(12);
         let cyberware_count = random(3);
-        let gear_count = random(4,1);
+        let gear_count = random(6,1);
         // console.debug(role, cyberware_count);
 
         let starting_hits = Math.ceil(stats.body * 5);
