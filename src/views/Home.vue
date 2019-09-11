@@ -170,6 +170,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <p>Want a more extensive Lifepath? <router-link :to="{name: 'lifepath'}">Check out the 2020 Lifepath Generator</router-link></p>
                     </div>
                 </div>
 
@@ -305,8 +306,8 @@ export default {
         }
     },
     mounted: function() {
-        let base64 = false;
-        // let base64 = this.$route.params.base64;
+        // let base64 = false;
+        let base64 = this.$route.params.base64;
         // console.debug(base64);
         if (base64) {
             this.$set(this, "character", new Character(base64));

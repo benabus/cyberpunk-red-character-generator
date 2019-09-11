@@ -9,6 +9,14 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
         {
+            path: "/lifepath",
+            name: "lifepath",
+            component: () =>
+                import(/* webpackChunkName: "lifepath" */ "./views/2020Lifepath.vue")
+        },
+
+
+        {
             path: "/",
             name: "home",
             component: () =>
