@@ -24,6 +24,10 @@
                         </div>
                         <button class="btn btn-primary"
                                 @click="generateCharacter">Regen</button>
+                        <button class="btn btn-primary ml-1"
+                                @click="edit = !edit; character.recalculate()">Edit</button>
+                        <button class="btn btn-primary ml-1"
+                                @click="clearCharacter()">Blank</button>
                     </div>
                 </div>
                 <div>
@@ -46,7 +50,11 @@
                                     <td class="text-center"
                                         v-for="(stat, type) in stats"
                                         :key="type">
-                                        {{stat}}
+                                        <span v-if="!edit">{{stat}}</span>
+                                        <input v-else
+                                               type="number"
+                                               class="form-control pr-0"
+                                               v-model="character.stats[type]" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -170,7 +178,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p>Want a more extensive Lifepath? <router-link :to="{name: 'lifepath'}">Check out the 2020 Lifepath Generator</router-link></p>
+                        <p>Want a more extensive Lifepath? <router-link :to="{name: 'lifepath'}">Check out the 2020 Lifepath Generator</router-link>
+                        </p>
                     </div>
                 </div>
 
@@ -283,7 +292,8 @@ export default {
         return {
             character: undefined,
             set_role: false,
-            chosen_role: ""
+            chosen_role: "",
+            edit: false
         };
     },
     computed: {
@@ -303,6 +313,45 @@ export default {
             let char = new Character(char_options);
             this.$set(this, "character", char);
             this.$router.push("/" + this.character.encode64());
+        },
+        clearCharacter: function() {
+            
+            this.character.name = " ";
+            this.character.role = " ";
+            this.character.stats = {int: "",
+                ref: "",
+                dex: "",
+                tech: "",
+                cool: "",
+                will: "",
+                luck: "",
+                move: "",
+                body: "",
+                emp: ""};
+            this.character.starting_hits = " ";
+            this.character.seriously_wounded = " ";
+            this.character.death_save = " ";
+            this.character.skills = [];
+            for(let skill of Object.values(Database.skills))
+            {
+                skill.modifier = " "
+                this.character.skills.push(
+                    skill
+                );
+            }
+            this.character.armor = {head: {}, body: {}};
+            this.character.weapons = [];
+            this.character.cyberware = [];
+            this.character.gear = [];
+            for(let i of [0, 1, 2, 3])
+            {
+                this.character.weapons.push({name: "", special: "", damage: ""});
+                this.character.cyberware.push({name: "", description: " "});
+                this.character.gear.push({name: "", description: " "});
+            }
+            this.character.lifepath = {friends: [], enemies: []};
+            this.character.reputation = " ";
+            this.character.appearance = {};
         }
     },
     mounted: function() {
@@ -317,6 +366,7 @@ export default {
         // setInterval( ()=>{
         // this.generateCharacter();
         // }, 2000);
+        console.debug(this.character);
     }
 };
 </script>

@@ -271,7 +271,11 @@ function Character(settings) {
     // console.debug(return_obj);
     // return return_obj;
 }
-
+Character.prototype.recalculate = function(){
+    this.starting_hits = Math.ceil(this.stats.body * 5);
+    this.seriously_wounded = Math.ceil(this.stats.body * 2.5);
+    this.death_save = this.stats.body;
+};
 Character.prototype.toString = function() {
     return JSON.stringify(this);
 };
