@@ -13,7 +13,7 @@
       </div>
       <div class="charsheet-header__actions">
         <button class="button button--white" @click="generateCharacter">Regen</button>
-        <button class="button button--white" @click="edit = !edit; character.recalculate()">
+        <button class="button button--white" @click="toggleEdit">
           {{ !edit ? 'Edit' : 'Save' }}
         </button>
         <a
@@ -127,6 +127,14 @@ export default {
         this.$set(this, "character", char);
         this.$router.push("/" + this.character.encode64());
       },
+      toggleEdit: function() {
+        this.edit = !this.edit;
+        this.character.recalculate();
+        if (!this.edit) {
+          // Update link based on changes
+          this.$router.push("/" + this.character.encode64());
+        }
+      }
     },
     mounted: function() {
       // let base64 = false;
