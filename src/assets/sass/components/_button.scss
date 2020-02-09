@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  background-color: $medium-red;
+  border: 2px solid $dark-red;
+  border-radius: 0;
+  cursor: pointer;
+  color: $white;
+  font-weight: bold;
+  margin: rem(5px);
+  // Top padding different to fix for weird font baseline
+  padding: rem(13px 15px 10px);
+  transition: background .3s ease,
+              color .3s ease,
+              border .3s ease;
+
+  &:hover {
+    background-color: $dark-red;
+  }
+
+  &--white {
+    background-color: $white;
+    border-color: $gray;
+    color: $prime-red;
+
+    &:hover {
+      background-color: $gray;
+    }
+  }
+}

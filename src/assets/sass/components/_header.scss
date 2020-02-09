@@ -1,0 +1,16 @@
+.header {
+  @extend %print-remove;
+
+  background-color: $gray;
+  text-align: center;
+  padding: rem(20px) 0;
+  margin-bottom: rem(20px);
+
+  &__link {
+    font-family: $font-cond;
+    font-size: rem(35px);
+    font-weight: bold;
+    text-decoration: none;
+    color: $prime-red;
+  }
+}

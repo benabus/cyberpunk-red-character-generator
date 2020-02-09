@@ -1,0 +1,51 @@
+@include font-face('TwCent', 'TwCenMTStd-SemiMedium');
+@include font-face('TwCent', 'TwCenMTStd-Bold', 700);
+@include font-face('TwCent-Cond', 'TwCenMTStd-MediumCond');
+
+// Resets
+html, * {
+  font-family: $font;
+  font-size: 16px; // rem base
+  -webkit-print-color-adjust: exact;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+margin: 0
+}
+
+a {
+  text-decoration: none;
+  color: $dark-red;
+}
+
+// App container
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include breakpoint($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
+
+  @include breakpoint(print) {
+    max-width: unset;
+    width: 100% !important;
+  }
+}

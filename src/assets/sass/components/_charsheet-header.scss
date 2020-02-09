@@ -1,0 +1,12 @@
+.charsheet-header {
+  @extend %cut-corners-box;
+  @extend %print-remove;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakpoint(tablet) {
+    flex-direction: row;
+  }
+}
