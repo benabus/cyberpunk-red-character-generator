@@ -6,7 +6,7 @@
         <h4 class="charsheet-skills__skill-name">{{ skill.name }}</h4>
         <p>
           {{skill.stat}} + {{skill.modifier}}
-          <br />(<b>{{(parseInt(stats[skill.stat.toLowerCase()]) || 0) + skill.modifier}}</b>)
+          <b v-if="showSkillTotal">({{(parseInt(stats[skill.stat.toLowerCase()]) || 0) + skill.modifier}})</b>
         </p>
       </div>
     </div>
@@ -16,6 +16,6 @@
 <script>
   export default {
     name: "CharSkills",
-    props: ['skills', 'stats'],
+    props: ['skills', 'stats', 'showSkillTotal'],
   }
 </script>

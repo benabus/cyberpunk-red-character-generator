@@ -22,10 +22,12 @@
     }
 
     &__char-photo {
-      width: 150px;
+      @extend %cut-path-2;
+      width: 90px;
       background-size: cover;
       background-position: center;
       margin-right: rem(15px);
+      margin-bottom: rem(10px);
     }
 
     &__base-info {

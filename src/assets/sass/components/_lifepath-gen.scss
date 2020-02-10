@@ -1,0 +1,39 @@
+.lifepath-gen {
+  @extend %cut-corners-box;
+
+  &__title {
+    @extend %box-side-title;
+    margin-bottom: rem(10px);
+  }
+
+  &__content {
+    background-color: $white;
+    padding: rem(15px);
+    line-height: 1.2;
+  }
+
+  &__persons {
+    break-inside: avoid;
+    margin-top: rem(15px);
+  }
+
+  &__persons-title {
+    color: $white;
+    font-size: rem(18px);
+    padding-bottom: rem(5px);
+  }
+
+  &__persons-list {
+    background-color: $white;
+    margin: 0;
+    padding: rem(15px);
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-bottom: rem(10px);
+    }
+  }
+}

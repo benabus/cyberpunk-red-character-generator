@@ -31,15 +31,11 @@
   }
 }
 
-// Placeholder for red boxes with cut corners
-%cut-corners-box {
-  $corner-width: rem(20px);
 
-  position: relative;
-  background-color: $prime-red;
-  padding: rem(20px) $corner-width;
-  margin-bottom: rem(15px);
+$corner-width: rem(20px);
 
+// Path for upper right and lower left corners
+%cut-path-1 {
   clip-path:
     polygon(
       0% 0%,
@@ -51,6 +47,30 @@
       $corner-width 100%,
       0% calc(100% - #{$corner-width})
     );
+}
+
+// Path for upper left and lower right corners
+%cut-path-2 {
+  clip-path:
+    polygon(
+      $corner-width 0%,
+      0% $corner-width,
+      0% 100%,
+      calc(100% - #{$corner-width}) 100%,
+      100% calc(100% - #{$corner-width}),
+      100% 0,
+      0 0,
+      $corner-width 0%
+    );
+}
+
+// Placeholder for red boxes with cut corners
+%cut-corners-box {
+  @extend %cut-path-1;
+  position: relative;
+  background-color: $prime-red;
+  padding: rem(20px) $corner-width;
+  margin-bottom: rem(15px);
 }
 
 %box-side-title {

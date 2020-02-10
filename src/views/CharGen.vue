@@ -16,6 +16,7 @@
         <button class="button button--white" @click="toggleEdit">
           {{ !edit ? 'Edit' : 'Save' }}
         </button>
+        <button class="button button--white" @click="showOptionsModal">Options</button>
         <a
           class="button button--white"
           href="https://drive.google.com/file/d/1o84Y9-X3tsIU6cfk_hd0JD3pkM19bSi3/view?usp=drivesdk"
@@ -29,7 +30,7 @@
 
     <!-- Top Stats -->
     <section class="charsheet-stats">
-      <char-base-info :character='character' :stats='stats' :edit='edit'/>
+      <char-base-info :character='character' :stats='stats' :edit='edit' :renderPhoto='renderPhoto' />
 
       <char-health
         :starting_hits='character.starting_hits'
@@ -42,11 +43,11 @@
     <div class="charsheet-bottom">
       <div class="charsheet-bottom__column">
         <!-- Skills -->
-        <char-skills :skills='character.skills' :stats='character.stats' />
+        <char-skills :skills='character.skills' :stats='character.stats' :showSkillTotal='showSkillTotal'/>
         <!-- End Skills -->
 
         <!-- Char Lifepath -->
-        <char-lifepath :lifepath='character.lifepath' />
+        <char-lifepath :lifepath='character.lifepath' :emptyLifePath='emptyLifePath' />
         <!-- End Char Lifepath -->
 
         <!-- Char Style -->
@@ -67,6 +68,36 @@
         <!-- End Char Items -->
       </div> <!-- .charsheet-bottom__column -->
     </div><!-- charsheet-bottom -->
+
+    <modal name="options-modal" class="options-modal">
+      <button class="options-modal__close" @click="hideOptionsModal" title="Close modal" aria-label="Close modal">X</button>
+      <h3 class="options-modal__title">Options</h3>
+
+      <label class=" options-modal__option">
+        <input type="checkbox" v-model="showSkillTotal">
+        Show skills calculated total
+      </label>
+
+      <label class=" options-modal__option">
+        <input type="checkbox" v-model="renderStyle">
+        Show character style
+      </label>
+
+      <label class=" options-modal__option">
+        <input type="checkbox" v-model="emptyLifePath">
+        Show empty character lifepath
+      </label>
+
+      <label class=" options-modal__option">
+        <input type="checkbox" v-model="emptyStyle">
+        Show empty character style
+      </label>
+
+      <label class="options-modal__option">
+        <input type="checkbox" v-model="renderPhoto">
+        Show character photo <small>(beta)</small>
+      </label>
+    </modal>
 
   </div>
 </template>
@@ -107,6 +138,7 @@ export default {
         renderStyle: true,
         emptyLifePath: false,
         emptyStyle: false,
+        showSkillTotal: true,
       };
     },
     computed: {
@@ -134,6 +166,12 @@ export default {
           // Update link based on changes
           this.$router.push("/" + this.character.encode64());
         }
+      },
+      showOptionsModal () {
+        this.$modal.show('options-modal');
+      },
+      hideOptionsModal () {
+        this.$modal.hide('options-modal');
       }
     },
     mounted: function() {
