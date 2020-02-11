@@ -1,0 +1,27 @@
+.options-modal {
+  .v--modal-box {
+    padding: rem(25px 20px 20px);
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    padding: rem(5px);
+    position: absolute;
+    top: rem(5px);
+    right: rem(5px);
+    font-weight: bold;
+    font-size: rem(20px);
+    color: $prime-red;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: rem(20px);
+  }
+
+  &__option {
+    display: block;
+    margin: rem(15px) 0;
+  }
+}

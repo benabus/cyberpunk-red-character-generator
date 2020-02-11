@@ -1,0 +1,17 @@
+.select-input {
+  appearance: none;
+  background-color: $medium-red;
+  border: 2px solid $dark-red;
+  border-radius: 0;
+  cursor: pointer;
+  color: $white;
+  font-weight: bold;
+  margin: rem(5px);
+  // Top padding different to fix for weird font baseline
+  padding: rem(13px 30px 10px 15px);
+
+  background-image: url($down-caret-icon);
+  background-size: rem(18px);
+  background-repeat: no-repeat;
+  background-position: right rem(10px) top 48%;
+}

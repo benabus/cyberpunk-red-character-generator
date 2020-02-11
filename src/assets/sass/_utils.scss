@@ -1,0 +1,81 @@
+// Mixin for custom fonts
+@mixin font-face($font-family, $font-file, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: '#{$font-family}';
+    src:  url('~@/assets/fonts/#{$font-file}.woff') format('woff2'),
+          url('~@/assets/fonts/#{$font-file}.woff2') format('woff');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+// Mobile first breakpoint inclusion
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($max-widths, $breakpoint) {
+    @media (min-width: map-get($max-widths, $breakpoint)) {
+      @content;
+    }
+  } @else if $breakpoint == print {
+    @media print {
+      @content;
+    }
+  } @else {
+    @error '`breakpoints()` breakpoint `#{$breakpoint}` not found.';
+  }
+}
+
+// Placeholder to remove element on print
+%print-remove {
+  @include breakpoint(print) {
+    display: none !important;
+  }
+}
+
+
+$corner-width: rem(20px);
+
+// Path for upper right and lower left corners
+%cut-path-1 {
+  clip-path:
+    polygon(
+      0% 0%,
+      $corner-width 0%,
+      calc(100% - #{$corner-width}) 0%,
+      100% $corner-width,
+      100% 100%,
+      calc(100% - #{$corner-width}) 100%,
+      $corner-width 100%,
+      0% calc(100% - #{$corner-width})
+    );
+}
+
+// Path for upper left and lower right corners
+%cut-path-2 {
+  clip-path:
+    polygon(
+      $corner-width 0%,
+      0% $corner-width,
+      0% 100%,
+      calc(100% - #{$corner-width}) 100%,
+      100% calc(100% - #{$corner-width}),
+      100% 0,
+      0 0,
+      $corner-width 0%
+    );
+}
+
+// Placeholder for red boxes with cut corners
+%cut-corners-box {
+  @extend %cut-path-1;
+  position: relative;
+  background-color: $prime-red;
+  padding: rem(20px) $corner-width;
+  margin-bottom: rem(15px);
+}
+
+%box-side-title {
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: rem(20px);
+}

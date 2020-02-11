@@ -1,0 +1,31 @@
+// VIEWPORT
+$breakpoints: (
+  base: 0,
+  mobile: 576px,
+  tablet: 768px,
+  desktop: 992px,
+  wide: 1200px
+);
+
+$max-widths: (
+  mobile: 540px,
+  tablet: 720px,
+  desktop: 960px,
+  wide: 1140px
+);
+
+// COLORS
+$white: rgb(255, 255, 255);
+$gray: rgb(230, 230, 230);
+$dark-gray: rgb(59, 59, 59);
+$black: rgb(0, 0, 0);
+$prime-red: rgb(219, 68, 53);
+$medium-red: rgb(173, 49, 38);
+$dark-red: rgb(150, 28, 17);
+
+
+// FONTS
+$font: 'TwCent', 'Arial', sans-serif;
+$font-cond: 'TwCent-Cond', 'Arial', sans-serif;
+
+$down-caret-icon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05OC45LDE4NC43bDEuOCwyLjFsMTM2LDE1Ni41YzQuNiw1LjMsMTEuNSw4LjYsMTkuMiw4LjZjNy43LDAsMTQuNi0zLjQsMTkuMi04LjZMNDExLDE4Ny4xbDIuMy0yLjYgIGMxLjctMi41LDIuNy01LjUsMi43LTguN2MwLTguNy03LjQtMTUuOC0xNi42LTE1Ljh2MEgxMTIuNnYwYy05LjIsMC0xNi42LDcuMS0xNi42LDE1LjhDOTYsMTc5LjEsOTcuMSwxODIuMiw5OC45LDE4NC43eiIvPjwvc3ZnPg==';

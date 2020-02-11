@@ -54,51 +54,51 @@ export default {
 
     "Tech scanner": {
         description:
-            "a small handheld microcomp with various 1/0 connecters and probes. Techscanners run diagnostic programs, Identify and examine malfunctioning components, and display internal schematics on a small screen. "
+            "A small handheld microcomp with various 1/0 connecters and probes. Techscanners run diagnostic programs, Identify and examine malfunctioning components, and display internal schematics on a small screen. "
     },
     "Cutting Torch": {
         description:
-            "common oxy/acetalyne type out of a bottle. Hand held, about a foot long. More powerful models are available, up to thermite lances at 5x-15x cost. "
+            "Common oxy/acetalyne type out of a bottle. Hand held, about a foot long. More powerful models are available, up to thermite lances at 5x-15x cost. "
     },
     "Tech Tool Kit": {
         description:
-            "mixed kit of tools for repair of mechanical items, usually in a 4'x16'x2' case. "
+            "Mixed kit of tools for repair of mechanical items, usually in a 4'x16'x2' case. "
     },
     "Electronics Kit": {
         description:
-            "mixed kit of tools for repair of electronic items, usually in a 4'x16'x2' case."
+            "Mixed kit of tools for repair of electronic items, usually in a 4'x16'x2' case."
     },
     "Protective Goggles": {
         description:
-            "protective eyewear for welding, metal machining work, chemical mixing, etc. "
+            "Protective eyewear for welding, metal machining work, chemical mixing, etc. "
     },
     Flashlight: {
         description:
-            "you all know what this is. Beam range 100'-120' Can buy smaller pocket lights (1 /4 range) for half the normal price. "
+            "You all know what this is. Beam range 100'-120' Can buy smaller pocket lights (1 /4 range) for half the normal price. "
     },
     Glowstik: {
         description:
-            "chemlight in a 6' plastic tube. Shake or break to activate. Soft light lasts up to 6 hours. Comes in green, blue, red. "
+            "Chemlight in a 6' plastic tube. Shake or break to activate. Soft light lasts up to 6 hours. Comes in green, blue, red. "
     },
     Flashpaint: {
         description:
-            "fluorescent paint gives off soft light equal to Glowstik, lasts up to 4 hours. "
+            "Fluorescent paint gives off soft light equal to Glowstik, lasts up to 4 hours. "
     },
     Flashtape: {
         description:
-            "flourescent paint gives off soft light equal to Glowstik. Lasts 6 hours, comes in variety of widths. "
+            "Flourescent paint gives off soft light equal to Glowstik. Lasts 6 hours, comes in variety of widths. "
     },
     Rope: {
         description:
-            "braided synthetics in a variety of thicknesses and weights. Can hold up to 1,000 lbs. "
+            "Braided synthetics in a variety of thicknesses and weights. Can hold up to 1,000 lbs. "
     },
     "Breathing Mask": {
         description:
-            "a common painter's style mask; nose and mouth coverage, with two replacable filters (1 eb per 1 0 pack) on the sides. Good for keeping out the smog. "
+            "A common painter's style mask; nose and mouth coverage, with two replacable filters (1 eb per 1 0 pack) on the sides. Good for keeping out the smog. "
     },
     "Personal Electronics Holo Generator": {
         description:
-            "small box (approx. 4 'x2'x6' inches) projects a holographic picture from a replacable chip. Generator is compatible with chips fcom most digital cameras. Can be linked with a digital Recorder/Player. "
+            "Small box (approx. 4 'x2'x6' inches) projects a holographic picture from a replacable chip. Generator is compatible with chips fcom most digital cameras. Can be linked with a digital Recorder/Player. "
     },
     // "Video Board": {
     //     description:
@@ -106,39 +106,39 @@ export default {
     // },
     Datachip: {
         description:
-            "the storage medium of the future for holding digital information. Usually plastic-cased, chips come in the shape of buttons, flat squares, and triangular slivers. All shapes can be read by all types of recording media by use of adapter plugs. "
+            "The storage medium of the future for holding digital information. Usually plastic-cased, chips come in the shape of buttons, flat squares, and triangular slivers. All shapes can be read by all types of recording media by use of adapter plugs. "
     },
     Logcompass: {
         description:
-            "a form of programmable inertial compassthat keeps track of your changes in direction from a fixed bearing or point. "
+            "A form of programmable inertial compassthat keeps track of your changes in direction from a fixed bearing or point. "
     },
     "Digital Recorder": {
         description:
-            "audio recording device using datachip technology, most are the size of two paperback books stacked flat. Some are smaller that a pack of cards. "
+            "Audio recording device using datachip technology, most are the size of two paperback books stacked flat. Some are smaller that a pack of cards. "
     },
     "Digital Camera": {
         description:
-            "still images are 'digitized' onto a chip cartridge. About the size of a pack of cigarettes. "
+            "Still images are 'digitized' onto a chip cartridge. About the size of a pack of cigarettes. "
     },
     VldeoCam: {
         description:
-            "can be mounted on a headset, a shoulder clamp, or hand-held depending on size (This affects price, size of recorded image, duration of recording time,etc. The price given is for the most inexpensive shoulder-carried model.) Sound and image are usually recorded on a tape·pak that is the size of a card deck or smaller, but you can direct-feed to a transmission device with a set of cables. "
+            "Can be mounted on a headset, a shoulder clamp, or hand-held depending on size (This affects price, size of recorded image, duration of recording time,etc. The price given is for the most inexpensive shoulder-carried model.) Sound and image are usually recorded on a tape·pak that is the size of a card deck or smaller, but you can direct-feed to a transmission device with a set of cables. "
     },
     "Video/audio Tape Player": {
         description:
-            "this device plays the videocam tape·paks, along with many older-style audio tapes. "
+            "This device plays the videocam tape·paks, along with many older-style audio tapes. "
     },
     "Video Tape": {
         description:
-            "the video tape of 2020 is a high density digital media capable of handling both audio and visual images. "
+            "The video tape of 2020 is a high density digital media capable of handling both audio and visual images. "
     },
     "Pocket TV": {
         description:
-            "uses a flat-scan screen in a package 5'x5'x3/4\" or smaller. Picks up the majority of VHF, UHF stations. "
+            "Uses a flat-scan screen in a package 5'x5'x3/4\" or smaller. Picks up the majority of VHF, UHF stations. "
     },
     "Digital Chip Player": {
         description:
-            "this plays audio- and video-recorded chips. You must plug into a video board to play the video track of a digital chip. "
+            "This plays audio- and video-recorded chips. You must plug into a video board to play the video track of a digital chip. "
     },
     "Digital Music Chip": {
         description:
@@ -146,157 +146,157 @@ export default {
     },
     "Electric Guitar": {
         description:
-            'no longer the classic "axe", it\'s now lighter, more flexible in its applications, and sometimes not even in a recognizable shape. It may have even replaced the strings and frets with a series of key banks! '
+            'No longer the classic "axe", it\'s now lighter, more flexible in its applications, and sometimes not even in a recognizable shape. It may have even replaced the strings and frets with a series of key banks! '
     },
     "Electronic Keyboard": {
         description:
-            "little changed from the present, except in size and power. "
+            "Little changed from the present, except in size and power. "
     },
     "Drum Synthesizers": {
         description:
-            "common 'new-wave'music equipment; a series of percussion pads and a sound box. It will fit In a couple of suitcases and can be arranged anyway the drummer plea.ses. "
+            "Common 'new-wave'music equipment; a series of percussion pads and a sound box. It will fit In a couple of suitcases and can be arranged anyway the drummer plea.ses. "
     },
     Amplifier: {
         description:
-            "little changed from the present, except in size and power "
+            "Little changed from the present, except in size and power "
     },
 
     "Laptop Computer": {
         description:
-            "the common portable, with internal hard drive, video board (detachable), and slots for data/ programming chips. These units do not have the advanced CPUs and memory spaces available in a regular computer system; they cannot be used for Netrunning. "
+            "The common portable, with internal hard drive, video board (detachable), and slots for data/ programming chips. These units do not have the advanced CPUs and memory spaces available in a regular computer system; they cannot be used for Netrunning. "
     },
     "Pocket Computer": {
         description:
-            "the classic 6'x3'x1 /2' programmable calculator with keyboard and chip slots, up to 100 pages of alphanumeric memory."
+            "The classic 6'x3'x1 /2' programmable calculator with keyboard and chip slots, up to 100 pages of alphanumeric memory."
     },
 
     Cybermodem: { description: "see Netrunning section. Cellular Cybermodem" },
     "Interface Cables": {
         description:
-            "typical plug ended splicing cables going from a cyber-operated machine to a person's interface sockets. "
+            "Typical plug ended splicing cables going from a cyber-operated machine to a person's interface sockets. "
     },
     "Low Impedance Cables": {
         description:
-            "special low-resistance/interferance cables for improved data transfer; they confer a + 1 bonus on any interfacing tasks, such as controlling cybervehicles or Netrunning."
+            "Special low-resistance/interferance cables for improved data transfer; they confer a + 1 bonus on any interfacing tasks, such as controlling cybervehicles or Netrunning."
     },
     "Trode Set": {
         description:
-            "a low efficency headset for 'piggybacking' in the Net. -2 to Interface skill."
+            "A low efficency headset for 'piggybacking' in the Net. -2 to Interface skill."
     },
     Keyboard: {
         description:
-            "can be accessorized to your cybermodem or other electronic equipment."
+            "Can be accessorized to your cybermodem or other electronic equipment."
     },
     Terminal: {
         description:
-            'a computer workstation including keyboard, video board, and 1/0 connectors. A terminal can be used to Netrun (making the runner immune to most Black software), but is very, very slow (-5 to Interface Skills). Terminal operators are commonly known as "net-tortoises"'
+            'A computer workstation including keyboard, video board, and 1/0 connectors. A terminal can be used to Netrun (making the runner immune to most Black software), but is very, very slow (-5 to Interface Skills). Terminal operators are commonly known as "net-tortoises"'
     },
 
     "Communications Mastoid Commo": {
         description:
-            " all commos are radio transceivers. This one is glued to the jaw and temple; you send via subvocalization and receive with soundless vibrations. Range 10 miles. "
+            "All commos are radio transceivers. This one is glued to the jaw and temple; you send via subvocalization and receive with soundless vibrations. Range 10 miles. "
     },
     "Pocket Commo": {
-        description: " a typical small walkie-talkie. Range 10 miles. "
+        description: "A typical small walkie-talkie. Range 10 miles. "
     },
-    Blnoculars: { description: "'nuff said. " },
+    Blnoculars: { description: "'Nuff said." },
     Binoglasses: {
         description:
-            " these high-tech . vision aids combine binocular effects with a laser rangefinder, and sometimes IR lenses. More expensive versions will have a digital camera built in. "
+            "These high-tech . vision aids combine binocular effects with a laser rangefinder, and sometimes IR lenses. More expensive versions will have a digital camera built in. "
     },
     "LB Goggles": {
         description:
-            " light intensification goggles boost ambient light for night vision via 'Starlite' technology. Goggles can be overwhelmed by sudden light level increase. With tuning (DIFFICULT task), they can also detect active IR beams. "
+            "Light intensification goggles boost ambient light for night vision via 'Starlite' technology. Goggles can be overwhelmed by sudden light level increase. With tuning (DIFFICULT task), they can also detect active IR beams. "
     },
     "IR Goggles": {
         description:
-            " these pick up hazy, background Infrared sources. Normally used with an active IR source for invisible illumination. "
+            "These pick up hazy, background Infrared sources. Normally used with an active IR source for invisible illumination. "
     },
     "IR Flashlight": {
         description:
-            " these pick up hazy, background Infrared sources. UV flash is similar; also useable with the proper cyberoptic. "
+            "These pick up hazy, background Infrared sources. UV flash is similar; also useable with the proper cyberoptic. "
     },
 
     "Cardlock Decryptor": {
         description:
-            "the probe of this device is inserted into a card lock instead of the normal card. A Decrypt or operates by adding +5 to your bas· TECH+Eiectronic Security+ 1d10 skill check against the lock. "
+            "The probe of this device is inserted into a card lock instead of the normal card. A Decrypt or operates by adding +5 to your bas· TECH+Eiectronic Security+ 1d10 skill check against the lock. "
     },
     VocDecryptor: {
         description:
-            "a vocal modulator for penetrating vocolocks. See above. A Decrypt or operates by adding +5 to your bas· TECH+Eiectronic Security+ 1d10 skill check against the lock. "
+            "A vocal modulator for penetrating vocolocks. See above. A Decrypt or operates by adding +5 to your bas· TECH+Eiectronic Security+ 1d10 skill check against the lock. "
     },
     "Security Scanner": {
         description:
-            "this device searches out electromagnetic fields generated by various alarm systems (75% chance of location). A TECH or INT roll may be needed to identify the style of alarm encountered. "
+            "This device searches out electromagnetic fields generated by various alarm systems (75% chance of location). A TECH or INT roll may be needed to identify the style of alarm encountered. "
     },
     "Polson Sniffer": {
         description:
-            "can be set to check air or liquid for a specific poison(s). Otherwise, it will simply alert you to foreign substances. 85% accuracy. "
+            "Can be set to check air or liquid for a specific poison(s). Otherwise, it will simply alert you to foreign substances. 85% accuracy. "
     },
     "Jamming Transmitter": {
         description:
-            "usually comes in 2 or 3 large cases, but can fill an entire van. jams electromagetic transmissions in a 1 000 foot area (that includes cellular phones and some cyberware). "
+            "Usually comes in 2 or 3 large cases, but can fill an entire van. jams electromagetic transmissions in a 1 000 foot area (that includes cellular phones and some cyberware). "
     },
     "Scanner Plate": {
         description:
-            "a reading device for palmprint locks. Can be attached to any type of Card or Voclock to add an extra layer of security. "
+            "A reading device for palmprint locks. Can be attached to any type of Card or Voclock to add an extra layer of security. "
     },
     "Movement Sensor": {
         description:
-            "a typical alarm system. Covers seismic, sonar, and fixed IR or visible light networks. Detects movement in a defined area, with a 95% reliability. The sensory processro is about the size of a pack of cigarettes. "
+            "A typical alarm system. Covers seismic, sonar, and fixed IR or visible light networks. Detects movement in a defined area, with a 95% reliability. The sensory processro is about the size of a pack of cigarettes. "
     },
     Passcard: {
-        description: "the most common unlocking device for a cardlock. "
+        description: "The most common unlocking device for a cardlock. "
     },
     "Tracking Device": {
         description:
-            "hand held or suitcased equipment for detecting/following tracer buttons. Range is 1 mile. "
+            "Hand held or suitcased equipment for detecting/following tracer buttons. Range is 1 mile. "
     },
     "Tracer Buttons": {
         description:
-            "can be any size from a matchbook to a pin. Uses radioactivity or constant/pulsed radio transmission to pinpoint who or what it's attached to. Some can be turned on/off remotely. Usually bought in sets of 6. "
+            "Can be any size from a matchbook to a pin. Uses radioactivity or constant/pulsed radio transmission to pinpoint who or what it's attached to. Some can be turned on/off remotely. Usually bought in sets of 6. "
     },
     Handcuffs: {
         description:
-            "just what it says. Probably a little stronger (a NEARLY IMPOSSIBLE task to break) due to new alloys. Often (50%) opened with a form of cardlock. "
+            "Just what it says. Probably a little stronger (a NEARLY IMPOSSIBLE task to break) due to new alloys. Often (50%) opened with a form of cardlock. "
     },
     "Striptape Binders": {
         description:
-            "great for riot control. One-use-only plastic locking strips for temporary handcuffs and leg ties (VERY DIFFICULT to break). With ceramic fibers to resist cutting, and guaranteed fireproof. Come in boxes of 12. "
+            "Great for riot control. One-use-only plastic locking strips for temporary handcuffs and leg ties (VERY DIFFICULT to break). With ceramic fibers to resist cutting, and guaranteed fireproof. Come in boxes of 12. "
     },
 
     "Dermal Stapler": {
         description:
-            "this automatically pulls the sides of a wound together and sutures it with staples of a compressed organic material that dissolves after an elapsed time. "
+            "This automatically pulls the sides of a wound together and sutures it with staples of a compressed organic material that dissolves after an elapsed time. "
     },
     "Spray Skin": {
         description:
-            "a putty-like spray gel for treatment of severe abrasions. Antiseptic and sterile, it's also air permeable and flakes off in about two weeks. "
+            "A putty-like spray gel for treatment of severe abrasions. Antiseptic and sterile, it's also air permeable and flakes off in about two weeks. "
     },
 
     Cryotank: {
         description:
-            "an advanced refrigeration tank; the cryotank will cool a body down to preservation levels while life-support machines maintain the blood/oxygen flow. Designed to keep a dying body In relative stasis. "
+            "An advanced refrigeration tank; the cryotank will cool a body down to preservation levels while life-support machines maintain the blood/oxygen flow. Designed to keep a dying body In relative stasis. "
     },
     Medkit: {
         description:
-            "standard doctor's or military corpsman's bag. It contains antidotes, dressings, drugs, applicators, medicines, and examining Instruments (probes, depressors, ocular light, stethoscope). "
+            "Standard doctor's or military corpsman's bag. It contains antidotes, dressings, drugs, applicators, medicines, and examining Instruments (probes, depressors, ocular light, stethoscope). "
     },
     "Surgical Set": {
         description:
-            "a full set of surgeon's tools (scalpel, retractor, probe, damp, tweezer, etc.}, and chemicals or equipment for maintaining a sterile operating field. "
+            "A full set of surgeon's tools (scalpel, retractor, probe, damp, tweezer, etc.}, and chemicals or equipment for maintaining a sterile operating field. "
     },
     "First Aid Kit": {
         description:
-            "the common household medic's box. It has bandages, antiseptics, and a simple painkiller. "
+            "The common household medic's box. It has bandages, antiseptics, and a simple painkiller. "
     },
     "Slap Patch": {
         description:
-            "a small plutic pad containing a measured amount of medicine. The pad Is applied to the skin and the mediclne Is absorbed in steady doses. See the Trouma Team section for drugs and prices. "
+            "A small plutic pad containing a measured amount of medicine. The pad Is applied to the skin and the mediclne Is absorbed in steady doses. See the Trouma Team section for drugs and prices. "
     },
     Airhypo: {
         description:
-            "the 'Bones McCoy' uses a quick burst of compressed air to force a liquid drug through the skin. See the Trauma Team section for drugs and prices. "
+            "The 'Bones McCoy' uses a quick burst of compressed air to force a liquid drug through the skin. See the Trauma Team section for drugs and prices. "
     },
     Medscanner: {
         description:
@@ -304,57 +304,57 @@ export default {
     },
     "Drug Analyser": {
         description:
-            "ranging in size from a book to a briefcase, this gaget operates in a manner simular to the chemical sniffer. It will determine the purity of a drug with a known composition, or ldentfy the molecular makeup and possible effects of an unknown substance that is simular to a drug already programmed into its library. "
+            "Ranging in size from a book to a briefcase, this gaget operates in a manner simular to the chemical sniffer. It will determine the purity of a drug with a known composition, or ldentfy the molecular makeup and possible effects of an unknown substance that is simular to a drug already programmed into its library. "
     },
 
     Scooter: {
         description:
-            "this is an updated, electrically powered version of the old Riva and Vespa motorscooters of the 1990's. Top speed about 50 mph, scooters can get about 6 hours of travel per fastcharge (about 5 minutes at any service station). "
+            "This is an updated, electrically powered version of the old Riva and Vespa motorscooters of the 1990's. Top speed about 50 mph, scooters can get about 6 hours of travel per fastcharge (about 5 minutes at any service station). "
     },
 
     CityCar: {
         description:
-            "one man (two In a pinch), three wheelers common in the Corporate Zones. Top speed about 40mph, with 4 hours travel per fastcharge. CityCars can also be rented (2· .. eb per mile) from convenient kiosks located around most corporate areas; you use your debit card to rent from the vendor, drive where you want, and drop the car off at the nearest vendor."
+            "One man (two In a pinch), three wheelers common in the Corporate Zones. Top speed about 40mph, with 4 hours travel per fastcharge. CityCars can also be rented (2· .. eb per mile) from convenient kiosks located around most corporate areas; you use your debit card to rent from the vendor, drive where you want, and drop the car off at the nearest vendor."
     },
     "Small Subcompact": {
         description:
-            "usually methanol or CHOOH2 powered, these vehicles have a top speed of around 90mph, a ten gallon tank and seat four in relative comfort."
+            "Usually methanol or CHOOH2 powered, these vehicles have a top speed of around 90mph, a ten gallon tank and seat four in relative comfort."
     },
     "Medium Sedan": {
         description:
-            "methanol or CHOOH2 powered, these vehicles have a top speed of around 90mph, a fifteen gallon tank and seat four."
+            "Methanol or CHOOH2 powered, these vehicles have a top speed of around 90mph, a fifteen gallon tank and seat four."
     },
     Sportscar: {
         description:
-            "almost always CHOOH2 powered (electrics /ust don't have the speed). Top speed about21 0, with a ten ga ion tank. Seats 2."
+            "Almost always CHOOH2 powered (electrics /ust don't have the speed). Top speed about21 0, with a ten ga ion tank. Seats 2."
     },
     "Luxury Sedan": {
         description:
-            "methanolorCHOOH2 powered, these vehicles have a top speed of around 90mph, a twenty gallon tank and seat six."
+            "MethanolorCHOOH2 powered, these vehicles have a top speed of around 90mph, a twenty gallon tank and seat six."
     },
     Fastcharge: {
         description:
-            "rapid (S minutes) battery-recharge for electric vehicles. Available at most service stations for 20 eb per charge."
+            "Rapid (S minutes) battery-recharge for electric vehicles. Available at most service stations for 20 eb per charge."
     },
     CHOOH2: {
         description:
-            "synthetic meta-alcohol fuel. About 1 D6/3+ 1 euro per gallon (the cost fluctuates wildly due to supply, demand and ceo-terrorist activities)."
+            "Synthetic meta-alcohol fuel. About 1 D6/3+ 1 euro per gallon (the cost fluctuates wildly due to supply, demand and ceo-terrorist activities)."
     },
 
     Kibble: {
         description:
-            "a mass-produced nutrient that satisfies most requirements for sustenance, but tends to look, smell, and tute like the dry pet food it takes its name from."
+            "A mass-produced nutrient that satisfies most requirements for sustenance, but tends to look, smell, and tute like the dry pet food it takes its name from."
     },
     "Generic Prepack": {
         description:
-            "a step up from the common TV dinner, thesemealpac.kscanbemkrowavedorrelrigerateddepending on What's inside. Many come with their own chemtabs for heating or cooling. The cuisine isn't inspired, but it beats kibble."
+            "A step up from the common TV dinner, thesemealpac.kscanbemkrowavedorrelrigerateddepending on What's inside. Many come with their own chemtabs for heating or cooling. The cuisine isn't inspired, but it beats kibble."
     },
     "Good Prepack": {
         description:
-            "good restaurant meals in a package. The best quality pre·made meals you're going to find. For anything better, eat out, or prep It yourself (and who really knows how to do that anymore?)."
+            "Good restaurant meals in a package. The best quality pre·made meals you're going to find. For anything better, eat out, or prep It yourself (and who really knows how to do that anymore?)."
     },
     Fresh: {
         description:
-            "you know what that Is. Well, at least you've met someone who's eaten it."
+            "You know what that Is. Well, at least you've met someone who's eaten it."
     }
 };

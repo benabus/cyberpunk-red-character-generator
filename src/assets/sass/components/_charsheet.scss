@@ -1,0 +1,252 @@
+.charsheet {
+  &-stats {
+    @extend %cut-corners-box;
+
+    &__name {
+      color: $white;
+      font-size: rem(28px);
+      font-weight: bold;
+      margin-bottom: rem(10px);
+    }
+
+    &__top-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__stats-row,
+    &__health-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: rem(10px);
+    }
+
+    &__char-photo {
+      @extend %cut-path-2;
+      width: 90px;
+      background-size: cover;
+      background-position: center;
+      margin-right: rem(15px);
+      margin-bottom: rem(10px);
+    }
+
+    &__base-info {
+      flex-grow: 1;
+    }
+
+    &__data-block {
+      flex-basis: 100%;
+      &+& {
+        margin-left: rem(5px);
+      }
+    }
+
+    &__data-info {
+      appearance: none;
+      display: block;
+      width: 100%;
+      background-color: $white;
+      color: $black;
+      text-transform: uppercase;
+      text-align: center;
+      padding: rem(8px 0 5px);
+      border: 3px solid transparent;
+
+      // Fix for input mode
+      -moz-appearance:textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &--edit {
+        border-color: $dark-red;
+      }
+
+      &--type {
+        font-weight: bold;
+      }
+
+      &+& {
+        margin-top: rem(5px);
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+
+    @include breakpoint(tablet) {
+      &__column {
+        width: calc(50% - #{rem(7.5px)});
+      }
+    }
+
+    @include breakpoint(print) {
+      &__column {
+        width: calc(50% - #{rem(7.5px)});
+      }
+    }
+  }
+
+  &-skills,
+  &-lifepath,
+  &-style,
+  &-armor,
+  &-weapons,
+  &-items {
+    @extend %cut-corners-box;
+
+    &__title {
+      @extend %box-side-title;
+    }
+  }
+
+  &-skills {
+    &__skill-block {
+      flex-basis: calc(33% - #{rem(10px)});
+      background-color: $white;
+      margin: rem(5px);
+      padding: rem(10px) rem(5px);
+      text-align: center;
+      cursor: help;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 0;
+    }
+
+    &__skill-name {
+      margin-bottom: rem(5px);
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 rem(-5px);
+    }
+  }
+
+  &-lifepath,
+  &-style {
+    &__block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(10px);
+      break-inside: avoid;
+
+      &--hide-print {
+        @extend %print-remove;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__title {
+      width: rem(150px);
+      margin: 0;
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      padding: rem(5px);
+      background-color: $white;
+      flex-basis: calc(100% - #{rem(175px)});
+      min-height: rem(60px);
+
+      ol {
+        padding-left: rem(13px);
+      }
+    }
+
+    &__more {
+      color: $white;
+      text-align: center;
+      width: 100%;
+      padding-top: rem(10px);
+
+      a {
+        color: $gray;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-armor,
+  &-weapons {
+    $block: &;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__table {
+      width: 100%;
+      margin-left: rem(10px);
+      border: 5px solid transparent;
+
+      th,
+      td {
+        text-align: left;
+        background-color: $white;
+        padding: rem(10px 5px 7px);
+      }
+
+      th {
+        width: rem(70px);
+      }
+
+      #{$block}__info-number {
+        text-align: center;
+        width: rem(60px);
+      }
+    }
+  }
+
+  &-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__title {
+      text-align: center;
+      margin-bottom: rem(15px);
+    }
+
+    &__column {
+      width: calc(50% - #{rem(2.5px)});
+    }
+
+    &__item {
+      background-color: $white;
+      text-align: center;
+      padding: rem(20px 15px);
+      min-height: rem(90px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      break-inside: avoid;
+
+      &+& {
+        margin-top: rem(5px);
+      }
+
+      h4 {
+        font-size: rem(18px);
+        margin-bottom: rem(5px);
+      }
+
+      p {
+        font-size: rem(14px);
+      }
+    }
+  }
+}

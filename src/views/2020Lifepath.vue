@@ -1,12 +1,43 @@
 <template>
-    <div class="container">
-        <h1 class="h3">Cyberpunk 2020 Lifepath Generator</h1>
-        <div v-html="lifepath"></div>
-        <pre v-text="friends"></pre>
-        <pre v-text="enemies"></pre>
-        <pre v-text="lovers"></pre>
+  <section class="lifepath-gen">
+    <h1 class="lifepath-gen__title">Cyberpunk 2020 Lifepath Generator</h1>
+    <div v-html="lifepath" class="lifepath-gen__content"></div>
+
+    <div class="lifepath-gen__persons">
+      <h2 class="lifepath-gen__persons-title">Friends</h2>
+      <dl v-if="Object.keys(friends).length" class="lifepath-gen__persons-list">
+        <template v-for="(text, name, index) in friends">
+          <dt :key="`friend-name_${index}`" v-text="name"></dt>
+          <dd :key="`friend-text_${index}`" v-text="text"></dd>
+        </template>
+      </dl>
+      <p v-else>No friends</p>
     </div>
+
+    <div class="lifepath-gen__persons">
+      <h2 class="lifepath-gen__persons-title">Enemies</h2>
+      <dl v-if="Object.keys(enemies).length" class="lifepath-gen__persons-list">
+        <template v-for="(text, name, index) in enemies">
+          <dt :key="`enemy-name_${index}`" v-text="name"></dt>
+          <dd :key="`enemy-text_${index}`" v-text="text"></dd>
+        </template>
+      </dl>
+      <p v-else>No enemies</p>
+    </div>
+
+    <div class="lifepath-gen__persons">
+      <h2 class="lifepath-gen__persons-title">Lovers</h2>
+      <dl v-if="Object.keys(lovers).length" class="lifepath-gen__persons-list">
+        <template v-for="(text, name, index) in lovers">
+          <dt :key="`lover-name_${index}`" v-text="name"></dt>
+          <dd :key="`lover-text_${index}`" v-text="text"></dd>
+        </template>
+      </dl>
+      <p v-else>No lovers</p>
+    </div>
+  </section>
 </template>
+
 
 <script>
 import RandomName from "node-random-name";
